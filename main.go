@@ -1,5 +1,9 @@
 package main
-import "fmt"
+import (
+	"fmt"
+	"strings"
+	"sort"
+)
 func main() {
 fmt.Println("Hello world!, Go is comming .....")
 // Strings concept
@@ -73,4 +77,32 @@ fmt.Printf("the type of rangeOne is %T \n", rangeOne)
 
 rangeOne = append(rangeOne, "koopa")
 fmt.Println(rangeOne)
+
+// standard library
+greeting := "hello there friends!"
+
+	fmt.Println(strings.Contains(greeting, "hello"))
+	fmt.Println(strings.Contains(greeting, "bye"))
+	fmt.Println(strings.ReplaceAll(greeting, "hello", "hi"))
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.Index(greeting, "ll"))
+	fmt.Println(strings.Split(greeting, " "))
+	// the original value is unchanged
+	fmt.Println("original string value =", greeting)
+
+	person_ages := []int{45, 20, 35, 30, 75, 60, 50, 25}
+
+	sort.Ints(person_ages)
+	fmt.Println(person_ages)
+
+	index := sort.SearchInts(person_ages, 30)
+	fmt.Println(index)
+
+	person_name := []string{"yoshi", "mario", "peach", "bowser", "luigi"}
+
+	sort.Strings(person_name)
+	fmt.Println(person_name)
+
+	fmt.Println(sort.SearchStrings(person_name, "bowser"))
+	
 }
